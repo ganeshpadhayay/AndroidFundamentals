@@ -1,2 +1,3 @@
 rootProject.name='AndroidFundamentals'
 include ':app'
+include ':algorithms'
