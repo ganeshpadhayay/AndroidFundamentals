@@ -10,7 +10,8 @@ import java.io.Serializable;
 class Employee implements Serializable {
     String name;
     int age;
-    String company;
+
+    //    String company; this breaks the serialization flow
     public Employee(String name, int age) {
         this.name = name;
         this.age = age;
@@ -25,16 +26,39 @@ public class TestSerialization {
     }
 
     public static void main(String[] args) {
-        deserialize("shubham.txt");
+        //first, serialize it
 //        Employee object = new Employee("ab", 20);
 //        String filename = "shubham.txt";
 //        serialize(object, filename);
+
+        //then try to deserialize it
+        deserialize("shubham.txt");
+    }
+
+    private static void serialize(Employee object, String filename) {
+        // Serialization
+        try {
+
+            // Saving of object in a file
+            FileOutputStream file = new FileOutputStream(filename);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+            // Method for serialization of object
+            out.writeObject(object);
+
+            out.close();
+            file.close();
+
+            System.out.println("Object has been serialized\n" + "Data before Deserialization.");
+            printData(object);
+            System.out.println(object.hashCode());
+        } catch (IOException ex) {
+            System.out.println("IOException is caught");
+        }
     }
 
     private static void deserialize(String filename) {
         // Deserialization
         try {
-
             // Reading the object from a file
             FileInputStream file = new FileInputStream
                     (filename);
@@ -59,25 +83,5 @@ public class TestSerialization {
 
     }
 
-    private static void serialize(Employee object, String filename) {
-        // Serialization
-        try {
-
-            // Saving of object in a file
-            FileOutputStream file = new FileOutputStream(filename);
-            ObjectOutputStream out = new ObjectOutputStream(file);
-            // Method for serialization of object
-            out.writeObject(object);
-
-            out.close();
-            file.close();
-
-            System.out.println("Object has been serialized\n" + "Data before Deserialization.");
-            printData(object);
-            System.out.println(object.hashCode());
-        } catch (IOException ex) {
-            System.out.println("IOException is caught");
-        }
-    }
 
 }
