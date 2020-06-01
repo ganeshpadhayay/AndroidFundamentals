@@ -1,4 +1,4 @@
-package com.ganesh.leetcodeJune;
+package com.ganesh.leetcode.june;
 
 class TreeNode {
     int val;
