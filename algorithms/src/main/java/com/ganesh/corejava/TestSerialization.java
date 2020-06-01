@@ -1,4 +1,4 @@
-package com.ganesh;
+package com.ganesh.corejava;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
