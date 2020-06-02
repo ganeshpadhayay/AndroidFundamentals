@@ -17,7 +17,7 @@ class SampleAsyncTaskActivity : AppCompatActivity() {
     }
 
     fun startAsyncTask(view: View) {
-        var exampleAsyncTask: ExampleAsyncTask = ExampleAsyncTask(this)
+        val exampleAsyncTask = ExampleAsyncTask(this)
         exampleAsyncTask.execute(10)
     }
 
@@ -40,7 +40,7 @@ class SampleAsyncTaskActivity : AppCompatActivity() {
             if (sampleAsyncTaskActivity == null || sampleAsyncTaskActivity.isFinishing) {
                 return
             }
-            sampleAsyncTaskActivity?.progress_bar?.visibility = View.VISIBLE
+            sampleAsyncTaskActivity.progress_bar?.visibility = View.VISIBLE
         }
 
         //only this method runs in background
@@ -61,7 +61,7 @@ class SampleAsyncTaskActivity : AppCompatActivity() {
             if (sampleAsyncTaskActivity == null || sampleAsyncTaskActivity.isFinishing) {
                 return
             }
-            values[0]?.let { sampleAsyncTaskActivity?.progress_bar?.progress = it }
+            values[0]?.let { sampleAsyncTaskActivity.progress_bar?.progress = it }
         }
 
         override fun onPostExecute(result: String?) {
@@ -71,8 +71,8 @@ class SampleAsyncTaskActivity : AppCompatActivity() {
             if (sampleAsyncTaskActivity == null || sampleAsyncTaskActivity.isFinishing) {
                 return
             }
-            sampleAsyncTaskActivity?.progress_bar?.progress = 0
-            sampleAsyncTaskActivity?.progress_bar?.visibility = View.INVISIBLE
+            sampleAsyncTaskActivity.progress_bar?.progress = 0
+            sampleAsyncTaskActivity.progress_bar?.visibility = View.INVISIBLE
             Toast.makeText(sampleAsyncTaskActivity, "" + result, Toast.LENGTH_SHORT).show()
         }
     }

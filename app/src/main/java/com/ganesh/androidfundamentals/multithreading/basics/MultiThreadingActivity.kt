@@ -10,6 +10,7 @@ import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.multithreading.asynctask.SampleAsyncTaskActivity
 import com.ganesh.androidfundamentals.multithreading.customHandlerThread.CustomHandlerThreadActivity
 import com.ganesh.androidfundamentals.multithreading.handlerThread.SampleHandlerThreadActivity
+import com.ganesh.androidfundamentals.multithreading.service.SampleServiceActivity
 import kotlinx.android.synthetic.main.activity_multi_threading.*
 
 
@@ -135,6 +136,10 @@ class MultiThreadingActivity : AppCompatActivity() {
 
     fun openAsyncTaskActivity(view: View) {
         startActivity(Intent(this, SampleAsyncTaskActivity::class.java))
+    }
+
+    fun openSampleServiceActivity(view: View) {
+        startActivity(Intent(this, SampleServiceActivity::class.java))
     }
 }
 
