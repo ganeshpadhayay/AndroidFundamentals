@@ -46,5 +46,14 @@
         android:onClick="openSampleHandlerThreadActivity"
         android:text="Handler Thread"/>
 
+    <Button
+        android:id="@+id/button_async_task"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="openAsyncTaskActivity"
+        android:text="Async Task"/>
+
 
 </LinearLayout>
