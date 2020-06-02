@@ -5,13 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".multithreading.basics.MultiThreadingActivity">
-
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp" />
+    tools:context=".multithreading.basics.CustomHandlerThreadActivity">
 
     <Button
         android:id="@+id/button_start_thread"
@@ -28,11 +22,17 @@
         android:text="Stop" />
 
     <Button
-        android:id="@+id/button_open_custom_handler_thread"
-        android:layout_width="match_parent"
+        android:id="@+id/button_task_a"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="openCustomHandlerThread"
-        android:text="Custome Handler Thread"/>
+        android:onClick="taskA"
+        android:text="TaskA" />
 
+    <Button
+        android:id="@+id/button_task_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="taskB"
+        android:text="TaskB" />
 
 </LinearLayout>

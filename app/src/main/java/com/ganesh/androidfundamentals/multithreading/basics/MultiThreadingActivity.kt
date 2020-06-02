@@ -1,5 +1,6 @@
 package com.ganesh.androidfundamentals.multithreading.basics
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -119,6 +120,10 @@ class MultiThreadingActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun openCustomHandlerThread(view: View) {
+        startActivity(Intent(this, CustomHandlerThreadActivity::class.java))
     }
 }
 
