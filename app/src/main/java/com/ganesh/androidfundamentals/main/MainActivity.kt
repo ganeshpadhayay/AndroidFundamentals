@@ -1,8 +1,9 @@
-package com.ganesh.androidfundamentals
+package com.ganesh.androidfundamentals.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.broadcastreceivers.BroadcastReceiverActivity
 import com.ganesh.androidfundamentals.contentproviders.ContentProvidersActivity
 import com.ganesh.androidfundamentals.multithreading.basics.MultiThreadingActivity

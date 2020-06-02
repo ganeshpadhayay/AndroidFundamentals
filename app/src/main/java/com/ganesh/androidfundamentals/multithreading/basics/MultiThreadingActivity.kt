@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
+import com.ganesh.androidfundamentals.multithreading.customHandlerThread.CustomHandlerThreadActivity
+import com.ganesh.androidfundamentals.multithreading.handlerThread.SampleHandlerThreadActivity
 import kotlinx.android.synthetic.main.activity_multi_threading.*
 
 
@@ -124,6 +126,10 @@ class MultiThreadingActivity : AppCompatActivity() {
 
     fun openCustomHandlerThread(view: View) {
         startActivity(Intent(this, CustomHandlerThreadActivity::class.java))
+    }
+
+    fun openSampleHandlerThreadActivity(view: View) {
+        startActivity(Intent(this, SampleHandlerThreadActivity::class.java))
     }
 }
 

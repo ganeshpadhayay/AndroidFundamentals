@@ -1,12 +1,12 @@
-package com.ganesh.androidfundamentals.multithreading.basics
+package com.ganesh.androidfundamentals.multithreading.customHandlerThread
 
 import android.os.Bundle
 import android.os.Message
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
-import com.ganesh.androidfundamentals.multithreading.basics.ExampleHandler.Companion.TASK_A
-import com.ganesh.androidfundamentals.multithreading.basics.ExampleHandler.Companion.TASK_B
+import com.ganesh.androidfundamentals.multithreading.customHandlerThread.ExampleHandler.Companion.TASK_A
+import com.ganesh.androidfundamentals.multithreading.customHandlerThread.ExampleHandler.Companion.TASK_B
 
 class CustomHandlerThreadActivity : AppCompatActivity() {
 
@@ -15,7 +15,8 @@ class CustomHandlerThreadActivity : AppCompatActivity() {
         const val TAG: String = "CustomHandlerThreadActivity"
     }
 
-    private var looperThread: ExampleLooperThread = ExampleLooperThread()
+    private var looperThread: ExampleLooperThread =
+        ExampleLooperThread()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

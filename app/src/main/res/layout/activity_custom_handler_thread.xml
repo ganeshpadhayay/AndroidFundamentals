@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".multithreading.basics.CustomHandlerThreadActivity">
+    tools:context=".multithreading.customHandlerThread.CustomHandlerThreadActivity">
 
     <Button
         android:id="@+id/button_start_thread"

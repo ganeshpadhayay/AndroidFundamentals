@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.multithreading.basics
+package com.ganesh.androidfundamentals.multithreading.customHandlerThread
 
 import android.os.Handler
 import android.os.Message

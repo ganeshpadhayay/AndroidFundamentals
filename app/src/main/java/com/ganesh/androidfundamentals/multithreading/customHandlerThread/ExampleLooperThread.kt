@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.multithreading.basics
+package com.ganesh.androidfundamentals.multithreading.customHandlerThread
 
 import android.os.Handler
 import android.os.Looper
@@ -22,7 +22,8 @@ class ExampleLooperThread : Thread() {
 
         looper = Looper.myLooper()!!            //this returns the looper associated with the given thread
 
-        handler = ExampleHandler()
+        handler =
+            ExampleHandler()
 
         //this starts an infinite for loop and we can exit it by calling looper.quit
         Looper.loop()

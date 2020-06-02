@@ -30,9 +30,21 @@
     <Button
         android:id="@+id/button_open_custom_handler_thread"
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:onClick="openCustomHandlerThread"
-        android:text="Custome Handler Thread"/>
+        android:text="Custom Handler Thread"/>
+
+    <Button
+        android:id="@+id/button_open_handler_thread"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:onClick="openSampleHandlerThreadActivity"
+        android:text="Handler Thread"/>
 
 
 </LinearLayout>
