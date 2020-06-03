@@ -3,8 +3,7 @@ package com.ganesh.androidfundamentals.multithreading.handlerThread
 import android.os.*
 import android.util.Log
 
-class ExampleHandlerThread :
-    HandlerThread("ExampleHandlerThread", Process.THREAD_PRIORITY_BACKGROUND) {
+class ExampleHandlerThread : HandlerThread("ExampleHandlerThread", Process.THREAD_PRIORITY_BACKGROUND) {
 
     companion object {
         private const val TAG = "ExampleHandlerThread"

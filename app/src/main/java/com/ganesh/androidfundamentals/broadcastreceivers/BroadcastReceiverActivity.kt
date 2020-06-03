@@ -10,4 +10,5 @@ class BroadcastReceiverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast_receiver)
     }
+
 }
