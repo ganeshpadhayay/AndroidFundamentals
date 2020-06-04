@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.multithreading.service
+package com.ganesh.androidfundamentals.multithreading.service.jobscheduler
 
 import android.app.job.JobParameters
 import android.app.job.JobService

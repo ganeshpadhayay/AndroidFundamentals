@@ -5,24 +5,26 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".multithreading.service.jobscheduler.SampleJobSchedulerActivity">
+    android:padding="16dp"
+    tools:context=".multithreading.service.SampleForegroundServiceActivity">
 
-    <Button
-        android:id="@+id/button_schedule_job"
+    <EditText
+        android:id="@+id/edit_text_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:onClick="scheduleJob"
-        android:text="Schedule Job" />
+        android:hint="Input" />
 
     <Button
-        android:id="@+id/button_cancel_job"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:onClick="cancelJob"
-        android:text="Cancel Job" />
+        android:onClick="startService"
+        android:text="Start Service" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="stopService"
+        android:text="Stop Service" />
+
 
 </LinearLayout>

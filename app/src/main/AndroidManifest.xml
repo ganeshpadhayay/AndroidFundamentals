@@ -3,18 +3,21 @@
     package="com.ganesh.androidfundamentals">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multithreading.service.SampleServiceActivity"></activity>
+        <activity android:name=".multithreading.service.SampleForegroundServiceActivity"></activity>
+        <activity android:name=".multithreading.service.jobscheduler.SampleJobSchedulerActivity" />
         <activity android:name=".multithreading.asynctask.SampleAsyncTaskActivity" />
         <activity android:name=".multithreading.handlerThread.SampleHandlerThreadActivity" />
         <activity android:name=".multithreading.customHandlerThread.CustomHandlerThreadActivity" />
-        <activity android:name=".multithreading.basics.MultiThreadingActivity" />
+        <activity android:name=".multithreading.MultiThreadingActivity" />
         <activity android:name=".broadcastreceivers.BroadcastReceiverActivity" />
         <activity android:name=".contentproviders.ContentProvidersActivity" />
         <activity android:name=".main.MainActivity">
@@ -24,8 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".multithreading.service.ExampleJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name=".multithreading.service.jobscheduler.ExampleJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service android:name=".multithreading.service.ExampleService"/>
     </application>
 
 </manifest>

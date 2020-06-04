@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.multithreading.service
+package com.ganesh.androidfundamentals.multithreading.service.jobscheduler
 
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
@@ -12,7 +12,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
 
-class SampleServiceActivity : AppCompatActivity() {
+class SampleJobSchedulerActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "SampleServiceActivity"
@@ -32,18 +32,21 @@ class SampleServiceActivity : AppCompatActivity() {
             .setPeriodic(15 * 60 * 10000)                //can't be set top lower than 15 minutes
             .build()
 
-        var scheduler: JobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
-        var resultCode: Int = scheduler?.schedule(jobInfo)                //for api less than 21 it could be null
-        if(resultCode == JobScheduler.RESULT_SUCCESS){
+        var scheduler: JobScheduler =
+            getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+        var resultCode: Int =
+            scheduler?.schedule(jobInfo)                //for api less than 21 it could be null
+        if (resultCode == JobScheduler.RESULT_SUCCESS) {
             Log.d(TAG, "Job scheduled successfully")
-        }else{
+        } else {
             Log.d(TAG, "Job scheduling failed")
         }
 
     }
 
     fun cancelJob(view: View) {
-        var scheduler: JobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+        var scheduler: JobScheduler =
+            getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
         scheduler.cancel(123)
         Log.d(TAG, "Job cancelled")
     }

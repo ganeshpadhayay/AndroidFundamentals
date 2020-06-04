@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.broadcastreceivers.BroadcastReceiverActivity
 import com.ganesh.androidfundamentals.contentproviders.ContentProvidersActivity
-import com.ganesh.androidfundamentals.multithreading.basics.MultiThreadingActivity
+import com.ganesh.androidfundamentals.multithreading.MultiThreadingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

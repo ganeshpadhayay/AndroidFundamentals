@@ -3,20 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".multithreading.basics.MultiThreadingActivity">
+    tools:context=".multithreading.MultiThreadingActivity">
 
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/button_start_thread"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:onClick="startThread"
         android:text="Start" />
 
@@ -24,45 +25,55 @@
         android:id="@+id/button_stop_thread"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:onClick="stopThread"
         android:text="Stop" />
 
     <Button
         android:id="@+id/button_open_custom_handler_thread"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:onClick="openCustomHandlerThread"
-        android:text="Custom Handler Thread"/>
+        android:text="Custom Handler Thread" />
 
     <Button
         android:id="@+id/button_open_handler_thread"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"
         android:onClick="openSampleHandlerThreadActivity"
-        android:text="Handler Thread"/>
+        android:text="Handler Thread" />
 
     <Button
         android:id="@+id/button_async_task"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"
         android:onClick="openAsyncTaskActivity"
-        android:text="Async Task"/>
+        android:text="Async Task" />
+
+    <Button
+        android:id="@+id/button_job_scheduler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="openSampleJobSchedulerActivity"
+        android:text="Job Scheduler" />
 
     <Button
         android:id="@+id/button_services"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"
         android:onClick="openSampleServiceActivity"
-        android:text="Services"/>
+        android:text="Services" />
 
 
 </LinearLayout>
