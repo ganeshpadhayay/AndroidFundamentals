@@ -75,5 +75,14 @@
         android:onClick="openSampleServiceActivity"
         android:text="Services" />
 
+    <Button
+        android:id="@+id/button_intent_services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="openSampleIntentServiceActivity"
+        android:text="Intent Services" />
+
 
 </LinearLayout>

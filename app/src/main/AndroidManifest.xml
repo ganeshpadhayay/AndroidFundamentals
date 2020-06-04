@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multithreading.service.SampleForegroundServiceActivity"></activity>
+        <activity android:name=".multithreading.service.intentservices.SampleIntentServiceActivity"></activity>
+        <activity android:name=".multithreading.service.services.SampleForegroundServiceActivity" />
         <activity android:name=".multithreading.service.jobscheduler.SampleJobSchedulerActivity" />
         <activity android:name=".multithreading.asynctask.SampleAsyncTaskActivity" />
         <activity android:name=".multithreading.handlerThread.SampleHandlerThreadActivity" />
@@ -27,11 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".multithreading.service.jobscheduler.ExampleJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <service android:name=".multithreading.service.ExampleService"/>
+        <service android:name=".multithreading.service.services.ExampleService" />
     </application>
 
 </manifest>

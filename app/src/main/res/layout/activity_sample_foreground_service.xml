@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".multithreading.service.SampleForegroundServiceActivity">
+    tools:context=".multithreading.service.services.SampleForegroundServiceActivity">
 
     <EditText
         android:id="@+id/edit_text_input"

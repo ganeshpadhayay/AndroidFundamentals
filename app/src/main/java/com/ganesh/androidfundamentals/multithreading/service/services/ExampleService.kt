@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.multithreading.service
+package com.ganesh.androidfundamentals.multithreading.service.services
 
 import android.app.Notification
 import android.app.PendingIntent

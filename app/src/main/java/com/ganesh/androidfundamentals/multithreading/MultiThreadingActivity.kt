@@ -10,7 +10,8 @@ import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.multithreading.asynctask.SampleAsyncTaskActivity
 import com.ganesh.androidfundamentals.multithreading.customHandlerThread.CustomHandlerThreadActivity
 import com.ganesh.androidfundamentals.multithreading.handlerThread.SampleHandlerThreadActivity
-import com.ganesh.androidfundamentals.multithreading.service.SampleForegroundServiceActivity
+import com.ganesh.androidfundamentals.multithreading.service.intentservices.SampleIntentServiceActivity
+import com.ganesh.androidfundamentals.multithreading.service.services.SampleForegroundServiceActivity
 import com.ganesh.androidfundamentals.multithreading.service.jobscheduler.SampleJobSchedulerActivity
 import kotlinx.android.synthetic.main.activity_multi_threading.*
 
@@ -145,6 +146,10 @@ class MultiThreadingActivity : AppCompatActivity() {
 
     fun openSampleJobSchedulerActivity(view: View) {
         startActivity(Intent(this, SampleJobSchedulerActivity::class.java))
+    }
+
+    fun openSampleIntentServiceActivity(view: View) {
+        startActivity(Intent(this, SampleIntentServiceActivity::class.java))
     }
 }
 

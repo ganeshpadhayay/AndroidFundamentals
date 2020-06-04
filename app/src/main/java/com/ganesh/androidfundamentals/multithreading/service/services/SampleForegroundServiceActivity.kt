@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.multithreading.service
+package com.ganesh.androidfundamentals.multithreading.service.services
 
 import android.content.Intent
 import android.os.Build
