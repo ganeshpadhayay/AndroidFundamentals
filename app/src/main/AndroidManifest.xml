@@ -3,6 +3,8 @@
     package="com.ganesh.androidfundamentals">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:name=".App"
@@ -33,6 +35,7 @@
             android:name=".multithreading.service.jobscheduler.ExampleJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service android:name=".multithreading.service.services.ExampleService" />
+        <service android:name=".multithreading.service.intentservices.ExampleIntentService"/>
     </application>
 
 </manifest>
