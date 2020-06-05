@@ -32,10 +32,8 @@ class SampleJobSchedulerActivity : AppCompatActivity() {
             .setPeriodic(15 * 60 * 10000)                //can't be set top lower than 15 minutes
             .build()
 
-        var scheduler: JobScheduler =
-            getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
-        var resultCode: Int =
-            scheduler?.schedule(jobInfo)                //for api less than 21 it could be null
+        var scheduler: JobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+        var resultCode: Int = scheduler?.schedule(jobInfo)                //for api less than 21 it could be null
         if (resultCode == JobScheduler.RESULT_SUCCESS) {
             Log.d(TAG, "Job scheduled successfully")
         } else {

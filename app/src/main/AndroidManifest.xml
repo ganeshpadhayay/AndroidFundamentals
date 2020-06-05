@@ -3,8 +3,8 @@
     package="com.ganesh.androidfundamentals">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".App"
@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multithreading.service.intentservices.SampleIntentServiceActivity"></activity>
+        <activity android:name=".multithreading.service.jobintentservice.SampleJobIntentServiceActivity"></activity>
+        <activity android:name=".multithreading.service.intentservices.SampleIntentServiceActivity" />
         <activity android:name=".multithreading.service.services.SampleForegroundServiceActivity" />
         <activity android:name=".multithreading.service.jobscheduler.SampleJobSchedulerActivity" />
         <activity android:name=".multithreading.asynctask.SampleAsyncTaskActivity" />
@@ -31,11 +32,16 @@
             </intent-filter>
         </activity>
 
+
+        <!--android:permission="android.permission.BIND_JOB_SERVICE" this is required for Jobs -->
         <service
             android:name=".multithreading.service.jobscheduler.ExampleJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service android:name=".multithreading.service.services.ExampleService" />
-        <service android:name=".multithreading.service.intentservices.ExampleIntentService"/>
+        <service android:name=".multithreading.service.intentservices.ExampleIntentService" />
+        <service
+            android:name=".multithreading.service.jobintentservice.ExampleJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
