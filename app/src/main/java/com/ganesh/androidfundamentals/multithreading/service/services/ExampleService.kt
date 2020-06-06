@@ -6,9 +6,9 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.ganesh.androidfundamentals.App.Companion.CHANNEL_ID
+import com.ganesh.androidfundamentals.MyApplication.Companion.CHANNEL_ID
 import com.ganesh.androidfundamentals.R
-import com.ganesh.androidfundamentals.main.MainActivity
+import com.ganesh.androidfundamentals.MainActivity
 
 /***
  * Since we have extended Service class only, all the code under onStartCommand() will run on the main thread so either start a new thread in

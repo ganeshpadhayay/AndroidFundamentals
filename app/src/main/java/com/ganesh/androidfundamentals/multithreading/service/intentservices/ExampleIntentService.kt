@@ -9,7 +9,7 @@ import android.os.PowerManager
 import android.os.SystemClock
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.ganesh.androidfundamentals.App.Companion.CHANNEL_ID
+import com.ganesh.androidfundamentals.MyApplication.Companion.CHANNEL_ID
 import com.ganesh.androidfundamentals.R
 
 /***

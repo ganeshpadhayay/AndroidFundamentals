@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.main
+package com.ganesh.androidfundamentals
 
 object AppConstants {
     const val START_INDEX_ZERO = 0

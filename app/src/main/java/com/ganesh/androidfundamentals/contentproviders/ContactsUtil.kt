@@ -3,7 +3,7 @@ package com.ganesh.androidfundamentals.contentproviders
 import android.app.Activity
 import android.provider.ContactsContract
 import android.text.TextUtils
-import com.ganesh.androidfundamentals.main.AppConstants
+import com.ganesh.androidfundamentals.AppConstants
 import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.contentproviders.data.ContactItem
 import com.ganesh.androidfundamentals.contentproviders.data.ContactListItem
