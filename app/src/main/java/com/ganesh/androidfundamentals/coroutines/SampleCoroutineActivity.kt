@@ -4,12 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
 import kotlinx.android.synthetic.main.activity_sample_coroutine.*
-import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 /***
@@ -22,6 +19,7 @@ class SampleCoroutineActivity : AppCompatActivity() {
 
     private val RESULT_1 = "Result #1"
     private val RESULT_2 = "Result #2"
+    private val JOB_TIMEOUT = 2100L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +30,34 @@ class SampleCoroutineActivity : AppCompatActivity() {
             //Default is for heavy computation on the background thread like filtering large lists
             //launch() is a coroutine builder which starts the coroutine
             CoroutineScope(IO).launch {
-                fakeApiRequest()
+//                fakeApiRequest()
+
+                //this is to test the timeout cases
+                fakeApiRequestForTimeoutCases()
+            }
+
+
+        }
+
+    }
+
+    /***
+     * this is to explore the timeout cases
+     */
+    private suspend fun fakeApiRequestForTimeoutCases() {
+        withContext(IO) {
+            val job = withTimeoutOrNull(JOB_TIMEOUT) {
+                val result1 = getResult1FromApi()   //wait
+                updateTextOnMainThread("Got $result1")
+
+                val result2 = getResult2FromApi(result1)    //wait
+                updateTextOnMainThread("Got $result2")
+            }   //wait
+
+            //job will be null if it timed out
+            if (job == null) {
+                val cancelMessage: String = "Cancelling Job... Job took longer than $JOB_TIMEOUT"
+                updateTextOnMainThread(cancelMessage)
             }
         }
 
