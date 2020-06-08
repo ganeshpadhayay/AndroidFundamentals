@@ -22,4 +22,17 @@
         android:layout_height="wrap_content"
         android:text="Coroutine as a Job"/>
 
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/button_parallel_background_calls"
+        android:layout_height="wrap_content"
+        android:text="Parallel Background Calls"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/button_sequential_background_calls"
+        android:layout_height="wrap_content"
+        android:text="Sequential Background Calls"/>
+
 </LinearLayout>
