@@ -9,12 +9,10 @@
     tools:context=".coroutines.job.CoroutineAsAJobActivity">
 
     <ProgressBar
-        android:id="@+id/progress_bar"
+        android:id="@+id/job_progress_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        tools:visibility="visible" />
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/job_button"
