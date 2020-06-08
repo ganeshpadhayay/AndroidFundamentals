@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.coroutines.job.CoroutineAsAJobActivity
 import com.ganesh.androidfundamentals.coroutines.parallelcoroutines.ParallelBackgroundCoroutinesActivity
+import com.ganesh.androidfundamentals.coroutines.sequentialcoroutines.SequentialBackgroundCoroutinesActivity
 import kotlinx.android.synthetic.main.activity_coroutines.*
 
 class CoroutinesActivity : AppCompatActivity() {
@@ -23,6 +24,10 @@ class CoroutinesActivity : AppCompatActivity() {
 
         button_parallel_background_calls?.setOnClickListener {
             startActivity(Intent(this, ParallelBackgroundCoroutinesActivity::class.java))
+        }
+
+        button_sequential_background_calls?.setOnClickListener {
+            startActivity(Intent(this, SequentialBackgroundCoroutinesActivity::class.java))
         }
     }
 }
