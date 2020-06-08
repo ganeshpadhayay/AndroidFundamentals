@@ -3,11 +3,10 @@ package com.ganesh.androidfundamentals.coroutines
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
-import kotlinx.android.synthetic.main.activity_sample_coroutine.*
+import kotlinx.android.synthetic.main.activity_simple_coroutine.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-
 
 /***
  * Basic difference between the thread and a coroutine is that coroutines are light weight thread and do not require context switching and multiple
@@ -15,7 +14,7 @@ import kotlinx.coroutines.Dispatchers.Main
  *
  * Coroutine Scopes is basically grouping the relevant coroutines together so that they can be cancelled collectively
  */
-class SampleCoroutineActivity : AppCompatActivity() {
+class SimpleCoroutineActivity : AppCompatActivity() {
 
     private val RESULT_1 = "Result #1"
     private val RESULT_2 = "Result #2"
@@ -23,7 +22,7 @@ class SampleCoroutineActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sample_coroutine)
+        setContentView(R.layout.activity_simple_coroutine)
 
         button.setOnClickListener {
             //we will launch coroutines from here using IO CoroutineScope as IO is used for network or DB operation, Main is for main thread
@@ -35,10 +34,7 @@ class SampleCoroutineActivity : AppCompatActivity() {
                 //this is to test the timeout cases
                 fakeApiRequestForTimeoutCases()
             }
-
-
         }
-
     }
 
     /***

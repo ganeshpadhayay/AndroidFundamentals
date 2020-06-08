@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.broadcastreceivers.BroadcastReceiverActivity
 import com.ganesh.androidfundamentals.contentproviders.ContentProvidersActivity
-import com.ganesh.androidfundamentals.coroutines.SampleCoroutineActivity
+import com.ganesh.androidfundamentals.coroutines.CoroutinesActivity
 import com.ganesh.androidfundamentals.multithreading.MultiThreadingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonCoroutinesActivity.setOnClickListener {
-            startActivity(Intent(this, SampleCoroutineActivity::class.java))
+            startActivity(Intent(this, CoroutinesActivity::class.java))
         }
     }
 }

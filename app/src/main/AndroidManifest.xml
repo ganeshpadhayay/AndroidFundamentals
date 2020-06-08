@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".coroutines.SampleCoroutineActivity"></activity>
+        <activity android:name=".coroutines.job.CoroutineAsAJobActivity"></activity>
+        <activity android:name=".coroutines.CoroutinesActivity" />
+        <activity android:name=".coroutines.SimpleCoroutineActivity" />
         <activity android:name=".multithreading.service.jobintentservice.SampleJobIntentServiceActivity" />
         <activity android:name=".multithreading.service.intentservices.SampleIntentServiceActivity" />
         <activity android:name=".multithreading.service.services.SampleForegroundServiceActivity" />
