@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_simple_coroutine.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
+import kotlin.random.Random
 
 /***
  * Basic difference between the thread and a coroutine is that coroutines are light weight thread and do not require context switching and multiple
@@ -123,5 +124,66 @@ class SimpleCoroutineActivity : AppCompatActivity() {
      */
     private fun logThread(methodName: String) {
         println("debug: ${methodName}: ${Thread.currentThread().name}")
+    }
+
+
+    private fun main() {
+        CoroutineScope(Main).launch {
+            println("Current Thread: ${Thread.currentThread().name}")
+            //if calling function freezeMainThread() one time or maybe 5-10 times it won't freeze UI as coroutines are small part of thread
+            //but if you call like 1000 coroutines then main thread will be occupied and might freeze the UI
+            for (i in 1..100000) {
+                freezeMainThread()
+            }
+        }
+    }
+
+    private suspend fun freezeMainThread() {
+        println("Starting network request")
+        delay(3000)
+        println("Finished network request")
+    }
+
+    /***
+     * runBlocking is basically a coroutine scope only difference is that this blocks the thread(Yes, complete thread) till this blocks execution
+     * both of these jobs will start at the same time but then runBlocking() will block the thread for some time and after that time
+     * job1 will be resumed.
+     */
+    private fun runBlockingDemonstration() {
+        //Job #1
+        val job1 = CoroutineScope(Main).launch {
+            println("Starting job in thread: ${Thread.currentThread().name}")
+
+            val result1 = getResult()
+            println("result1: $result1")
+
+            val result2 = getResult()
+            println("result1: $result2")
+
+            val result3 = getResult()
+            println("result1: $result3")
+
+            val result4 = getResult()
+            println("result1: $result4")
+
+            val result5 = getResult()
+            println("result1: $result5")
+        }
+
+        //job #2
+        CoroutineScope(Main).launch {
+            delay(1000)
+            runBlocking {
+                println("Blocking thread: ${Thread.currentThread().name}")
+                delay(4000)
+                println("Done blocking thread: ${Thread.currentThread().name}")
+            }
+        }
+
+    }
+
+    private suspend fun getResult(): Int {
+        delay(1000)
+        return Random.nextInt(0, 100)
     }
 }
