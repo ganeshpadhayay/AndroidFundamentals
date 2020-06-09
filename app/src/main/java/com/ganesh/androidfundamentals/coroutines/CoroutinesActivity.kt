@@ -8,6 +8,7 @@ import com.ganesh.androidfundamentals.coroutines.job.CoroutineAsAJobActivity
 import com.ganesh.androidfundamentals.coroutines.parallelcoroutines.ParallelBackgroundCoroutinesActivity
 import com.ganesh.androidfundamentals.coroutines.sequentialcoroutines.SequentialBackgroundCoroutinesActivity
 import com.ganesh.androidfundamentals.coroutines.structuredconcurrency.StructuredConcurrencyActivity
+import com.ganesh.androidfundamentals.coroutines.supervisorjob.SupervisorJobActivity
 import kotlinx.android.synthetic.main.activity_coroutines.*
 
 class CoroutinesActivity : AppCompatActivity() {
@@ -35,7 +36,7 @@ class CoroutinesActivity : AppCompatActivity() {
             startActivity(Intent(this, StructuredConcurrencyActivity::class.java))
         }
         button_supervisor_job?.setOnClickListener {
-            startActivity(Intent(this, SequentialBackgroundCoroutinesActivity::class.java))
+            startActivity(Intent(this, SupervisorJobActivity::class.java))
         }
 
     }

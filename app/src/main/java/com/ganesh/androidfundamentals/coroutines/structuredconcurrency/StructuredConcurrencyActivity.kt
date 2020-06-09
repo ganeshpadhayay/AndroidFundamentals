@@ -6,11 +6,16 @@ import com.ganesh.androidfundamentals.R
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.NonCancellable.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.concurrent.CancellationException
 
+/***
+ * Use supervisor job as a parent job so that child jobs can fail independently of each other and it won't affect the parent job
+ *
+ * Another less advised solution is to use the try-catch block around the job which will be throwing an exception but this is generally not
+ * a preferred way
+ */
 class StructuredConcurrencyActivity : AppCompatActivity() {
 
     /***
