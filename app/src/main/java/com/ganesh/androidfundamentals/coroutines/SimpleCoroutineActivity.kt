@@ -187,3 +187,9 @@ class SimpleCoroutineActivity : AppCompatActivity() {
         return Random.nextInt(0, 100)
     }
 }
+
+/***
+Do not use Global Scope as they do not sync well with the parent job and cancellation of parent job does not ensure
+the cancellation of child jobs
+This can be useful when we have an independent job running on GlobalScope but when it comes to Parent-child job context, do not
+ever use GlabalScope */
