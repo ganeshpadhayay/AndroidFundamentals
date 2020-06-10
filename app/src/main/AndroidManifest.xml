@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApplication"
@@ -14,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".coroutines.supervisorjob.SupervisorJobActivity"></activity>
+        <activity android:name=".samplemvvmproject.SampleMVVMCoroutinesActivity" />
+        <activity android:name=".coroutines.supervisorjob.SupervisorJobActivity" />
         <activity android:name=".coroutines.structuredconcurrency.StructuredConcurrencyActivity" />
         <activity android:name=".coroutines.sequentialcoroutines.SequentialBackgroundCoroutinesActivity" />
         <activity android:name=".coroutines.parallelcoroutines.ParallelBackgroundCoroutinesActivity" />
@@ -31,7 +33,7 @@
         <activity android:name=".multithreading.MultiThreadingActivity" />
         <activity android:name=".broadcastreceivers.BroadcastReceiverActivity" />
         <activity android:name=".contentproviders.ContentProvidersActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,12 +1,14 @@
-package com.ganesh.androidfundamentals
+package com.ganesh.androidfundamentals.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.broadcastreceivers.BroadcastReceiverActivity
 import com.ganesh.androidfundamentals.contentproviders.ContentProvidersActivity
 import com.ganesh.androidfundamentals.coroutines.CoroutinesActivity
 import com.ganesh.androidfundamentals.multithreading.MultiThreadingActivity
+import com.ganesh.androidfundamentals.samplemvvmproject.SampleMVVMCoroutinesActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         buttonCoroutinesActivity.setOnClickListener {
             startActivity(Intent(this, CoroutinesActivity::class.java))
+        }
+
+        button_sample_MVVM_coroutines?.setOnClickListener {
+            startActivity(Intent(this, SampleMVVMCoroutinesActivity::class.java))
         }
     }
 }

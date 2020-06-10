@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".main.MainActivity">
 
     <Button
         android:id="@+id/buttonContentProviders"
@@ -41,5 +41,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Explore Coroutines" />
+
+    <Button
+        android:id="@+id/button_sample_MVVM_coroutines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Sample MVVM Coroutine Project" />
 
 </LinearLayout>

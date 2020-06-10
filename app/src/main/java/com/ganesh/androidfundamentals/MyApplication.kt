@@ -18,8 +18,8 @@ class MyApplication : Application() {
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val notificationChannel: NotificationChannel = NotificationChannel(CHANNEL_ID, "Example Service Channel", NotificationManager.IMPORTANCE_DEFAULT)
-            val notificationManager: NotificationManager = getSystemService(NotificationManager::class.java) as NotificationManager
+            val notificationChannel = NotificationChannel(CHANNEL_ID, "Example Service Channel", NotificationManager.IMPORTANCE_DEFAULT)
+            val notificationManager = getSystemService(NotificationManager::class.java) as NotificationManager
             notificationManager.createNotificationChannel(notificationChannel)
         }
     }
