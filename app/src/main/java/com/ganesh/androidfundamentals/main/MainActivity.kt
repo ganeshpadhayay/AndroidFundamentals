@@ -8,6 +8,7 @@ import com.ganesh.androidfundamentals.broadcastreceivers.BroadcastReceiverActivi
 import com.ganesh.androidfundamentals.contentproviders.ContentProvidersActivity
 import com.ganesh.androidfundamentals.coroutines.CoroutinesActivity
 import com.ganesh.androidfundamentals.multithreading.MultiThreadingActivity
+import com.ganesh.androidfundamentals.navigationcomponents.SampleNavigationComponentActivity
 import com.ganesh.androidfundamentals.samplemvvmproject.SampleMVVMCoroutinesActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         button_sample_MVVM_coroutines?.setOnClickListener {
             startActivity(Intent(this, SampleMVVMCoroutinesActivity::class.java))
+        }
+
+        button_navigation_components?.setOnClickListener {
+            startActivity(Intent(this, SampleNavigationComponentActivity::class.java))
         }
     }
 }

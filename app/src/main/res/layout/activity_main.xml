@@ -49,4 +49,11 @@
         android:layout_marginTop="50dp"
         android:text="Sample MVVM Coroutine Project" />
 
+    <Button
+        android:id="@+id/button_navigation_components"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Sample Navigation Components" />
+
 </LinearLayout>
