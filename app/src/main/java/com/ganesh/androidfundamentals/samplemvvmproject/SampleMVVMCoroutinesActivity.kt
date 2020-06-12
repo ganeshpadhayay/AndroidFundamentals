@@ -1,6 +1,7 @@
 package com.ganesh.androidfundamentals.samplemvvmproject
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,10 +16,12 @@ class SampleMVVMCoroutinesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sample_m_v_v_m_coroutines)
 
-        sampleMVVMCoroutinesViewModel = ViewModelProvider(this).get(SampleMVVMCoroutinesViewModel::class.java)
+        sampleMVVMCoroutinesViewModel =
+            ViewModelProvider(this).get(SampleMVVMCoroutinesViewModel::class.java)
 
         sampleMVVMCoroutinesViewModel.user.observe(this, Observer { user ->
             println("DEBUG: $user")
+            Toast.makeText(this, user.toString(), Toast.LENGTH_LONG).show()
         })
 
         sampleMVVMCoroutinesViewModel.setUserId("1")
