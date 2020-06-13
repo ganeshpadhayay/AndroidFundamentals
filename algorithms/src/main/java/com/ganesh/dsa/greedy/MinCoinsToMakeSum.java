@@ -20,11 +20,12 @@ import java.util.Collections;
  * Not all problems can be solved using greedy like longest path problem or coin change problem but some standard problems can be solved
  * 1. Activity Selection
  * 2. Fractional Knapsack
- * 3. Job Sequencing -> Train Platform Sequencing
- * 4. Prim's
- * 5. Kruskal's
- * 6. Dijkstra's
- * 7. Huffman Coding
+ * 3. Job Sequencing
+ * 4. Minimum Train Platform(https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)
+ * 5. Prim's
+ * 6. Kruskal's
+ * 7. Dijkstra's
+ * 8. Huffman Coding
  */
 public class MinCoinsToMakeSum {
 
