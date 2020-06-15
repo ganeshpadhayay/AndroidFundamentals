@@ -1,23 +1,4 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
  
-@ganeshpadhayay 
-ganeshpadhayay
-/
-Dagger2Exploration
-1
-00
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security 0 Insights Settings
-Dagger2Exploration/.gitignore
-@ganeshpadhayay ganeshpadhayay Initial commit
-893a13d 2 days ago
-52 lines (42 sloc)  642 Bytes
-  
 *.iml
 .gradle
 /local.properties
@@ -70,15 +51,4 @@ output.json
 #NDK
 obj/
 .externalNativeBuild
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
