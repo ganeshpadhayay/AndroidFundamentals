@@ -1,4 +1,4 @@
-package com.ganesh.codechef;
+package com.ganesh.codechef.june;
 
 import java.io.BufferedReader;
 import java.io.IOException;
