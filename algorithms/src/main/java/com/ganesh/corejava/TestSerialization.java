@@ -27,9 +27,9 @@ public class TestSerialization {
 
     public static void main(String[] args) {
         //first, serialize it
-//        Employee object = new Employee("ab", 20);
-//        String filename = "shubham.txt";
-//        serialize(object, filename);
+        Employee object = new Employee("ab", 20);
+        String filename = "shubham.txt";
+        serialize(object, filename);
 
         //then try to deserialize it
         deserialize("shubham.txt");
