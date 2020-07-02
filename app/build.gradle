@@ -5,13 +5,13 @@ apply plugin: 'kotlin-android-extensions'
 def coroutine_version = '1.3.1'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.ganesh.androidfundamentals"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -60,4 +60,11 @@ dependencies {
     def material_version = "1.1.0-alpha07"
     implementation "com.google.android.material:material:$material_version"
 
+
+    //--Work Manager
+    def work_version = "2.0.1"
+    implementation "androidx.work:work-runtime:$work_version"   //java
+    implementation "androidx.work:work-runtime-ktx:$work_version"  // Kotlin + coroutines
+    implementation "androidx.work:work-rxjava2:$work_version" // optional - RxJava2 support
+    androidTestImplementation "androidx.work:work-testing:$work_version" //Optional- test support
 }

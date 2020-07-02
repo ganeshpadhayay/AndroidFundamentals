@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidFundamentals</string>
+    <string name="app_name">Android Fundamentals</string>
     <string name="mobile_number_prefix_91_without_plus">91</string>
     <string name="mobile_number_prefix_91">+91</string>
     <string name="mobile_number_prefix_0">0</string>

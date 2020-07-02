@@ -15,41 +15,88 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".workmanager.SampleWorkManagerActivity"></activity>
-        <activity android:name=".navigationcomponents.SampleNavigationComponentActivity" />
-        <activity android:name=".samplemvvmproject.SampleMVVMCoroutinesActivity" />
-        <activity android:name=".coroutines.supervisorjob.SupervisorJobActivity" />
-        <activity android:name=".coroutines.structuredconcurrency.StructuredConcurrencyActivity" />
-        <activity android:name=".coroutines.sequentialcoroutines.SequentialBackgroundCoroutinesActivity" />
-        <activity android:name=".coroutines.parallelcoroutines.ParallelBackgroundCoroutinesActivity" />
-        <activity android:name=".coroutines.job.CoroutineAsAJobActivity" />
-        <activity android:name=".coroutines.CoroutinesActivity" />
-        <activity android:name=".coroutines.SimpleCoroutineActivity" />
-        <activity android:name=".multithreading.service.jobintentservice.SampleJobIntentServiceActivity" />
-        <activity android:name=".multithreading.service.intentservices.SampleIntentServiceActivity" />
-        <activity android:name=".multithreading.service.services.SampleForegroundServiceActivity" />
-        <activity android:name=".multithreading.service.jobscheduler.SampleJobSchedulerActivity" />
-        <activity android:name=".multithreading.asynctask.SampleAsyncTaskActivity" />
-        <activity android:name=".multithreading.handlerThread.SampleHandlerThreadActivity" />
-        <activity android:name=".multithreading.customHandlerThread.CustomHandlerThreadActivity" />
-        <activity android:name=".multithreading.MultiThreadingActivity" />
-        <activity android:name=".broadcastreceivers.BroadcastReceiverActivity" />
-        <activity android:name=".contentproviders.ContentProvidersActivity" />
-        <activity android:name=".main.MainActivity">
+
+        <activity
+            android:name=".workmanager.SampleWorkManagerActivity"
+            android:label="Work Manager" />
+        <activity
+            android:name=".navigationcomponents.SampleNavigationComponentActivity"
+            android:label="Navigation Component" />
+        <activity
+            android:name=".samplemvvmproject.SampleMVVMCoroutinesActivity"
+            android:label="Sample MVVM Repository" />
+        <activity
+            android:name=".coroutines.supervisorjob.SupervisorJobActivity"
+            android:label="Coroutine Supervisor Job" />
+        <activity
+            android:name=".coroutines.structuredconcurrency.StructuredConcurrencyActivity"
+            android:label="Structured Concurrency" />
+        <activity
+            android:name=".coroutines.sequentialcoroutines.SequentialBackgroundCoroutinesActivity"
+            android:label="Sequential Coroutines" />
+        <activity
+            android:name=".coroutines.parallelcoroutines.ParallelBackgroundCoroutinesActivity"
+            android:label="Parallel Coroutines" />
+        <activity
+            android:name=".coroutines.job.CoroutineAsAJobActivity"
+            android:label="Job Coroutines" />
+        <activity
+            android:name=".coroutines.CoroutinesActivity"
+            android:label="Coroutines" />
+        <activity
+            android:name=".coroutines.SimpleCoroutineActivity"
+            android:label="Simple Coroutines" />
+        <activity
+            android:name=".multithreading.service.jobintentservice.SampleJobIntentServiceActivity"
+            android:label="Job Intent Service" />
+        <activity
+            android:name=".multithreading.service.intentservices.SampleIntentServiceActivity"
+            android:label="Intent Service" />
+        <activity
+            android:name=".multithreading.service.services.SampleForegroundServiceActivity"
+            android:label="Foreground Service" />
+        <activity
+            android:name=".multithreading.service.jobscheduler.SampleJobSchedulerActivity"
+            android:label="Job Scheduler" />
+        <activity
+            android:name=".multithreading.asynctask.SampleAsyncTaskActivity"
+            android:label="Async Task" />
+        <activity
+            android:name=".multithreading.handlerThread.SampleHandlerThreadActivity"
+            android:label="Handler Thread" />
+        <activity
+            android:name=".multithreading.customHandlerThread.CustomHandlerThreadActivity"
+            android:label="Custom Handler Thread" />
+        <activity
+            android:name=".multithreading.MultiThreadingActivity"
+            android:label="Multi Threading" />
+        <activity
+            android:name=".broadcastreceivers.BroadcastReceiverActivity"
+            android:label="Broadcast Receivers" />
+        <activity
+            android:name=".contentproviders.ContentProvidersActivity"
+            android:label="Content Providers" />
+        <activity
+            android:name=".main.MainActivity"
+            android:label="Android Fundamentals">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- android:permission="android.permission.BIND_JOB_SERVICE" this is required for Jobs -->
+
         <service
             android:name=".multithreading.service.jobscheduler.ExampleJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <service android:name=".multithreading.service.services.ExampleService" />
+
         <service android:name=".multithreading.service.intentservices.ExampleIntentService" />
         <service
             android:name=".multithreading.service.jobintentservice.ExampleJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 
 </manifest>
