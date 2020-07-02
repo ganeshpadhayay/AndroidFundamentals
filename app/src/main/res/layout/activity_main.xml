@@ -8,13 +8,6 @@
     tools:context=".main.MainActivity">
 
     <Button
-        android:id="@+id/buttonContentProviders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Content Providers" />
-
-    <Button
         android:id="@+id/buttonServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,25 +15,40 @@
         android:text="MultiThreading/Services" />
 
     <Button
+        android:id="@+id/buttonCoroutinesActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Explore Coroutines" />
+
+    <Button
+        android:id="@+id/buttonWorkManagerActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Work Manager" />
+
+    <Button
+        android:id="@+id/buttonContentProviders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Content Providers" />
+
+
+    <Button
         android:id="@+id/buttonBroadcastReceivers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Broadcast Receivers" />
 
     <Button
         android:id="@+id/buttonActivityFragments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Activity/Fragments" />
-
-    <Button
-        android:id="@+id/buttonCoroutinesActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Explore Coroutines" />
 
     <Button
         android:id="@+id/button_sample_MVVM_coroutines"
@@ -53,7 +61,7 @@
         android:id="@+id/button_navigation_components"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="Sample Navigation Components" />
 
 </LinearLayout>

@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".navigationcomponents.SampleNavigationComponentActivity"></activity>
+        <activity android:name=".workmanager.SampleWorkManagerActivity"></activity>
+        <activity android:name=".navigationcomponents.SampleNavigationComponentActivity" />
         <activity android:name=".samplemvvmproject.SampleMVVMCoroutinesActivity" />
         <activity android:name=".coroutines.supervisorjob.SupervisorJobActivity" />
         <activity android:name=".coroutines.structuredconcurrency.StructuredConcurrencyActivity" />

@@ -10,6 +10,7 @@ import com.ganesh.androidfundamentals.coroutines.CoroutinesActivity
 import com.ganesh.androidfundamentals.multithreading.MultiThreadingActivity
 import com.ganesh.androidfundamentals.navigationcomponents.SampleNavigationComponentActivity
 import com.ganesh.androidfundamentals.samplemvvmproject.SampleMVVMCoroutinesActivity
+import com.ganesh.androidfundamentals.workmanager.SampleWorkManagerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
         button_navigation_components?.setOnClickListener {
             startActivity(Intent(this, SampleNavigationComponentActivity::class.java))
+        }
+
+        buttonWorkManagerActivity?.setOnClickListener {
+            startActivity(Intent(this, SampleWorkManagerActivity::class.java))
         }
     }
 }
