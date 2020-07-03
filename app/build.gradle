@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 def coroutine_version = '1.3.1'
 
@@ -23,6 +24,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    viewBinding {
+        enabled = true
     }
 
 }
@@ -62,9 +67,12 @@ dependencies {
 
 
     //--Work Manager
-    def work_version = "2.0.1"
-    implementation "androidx.work:work-runtime:$work_version"   //java
-    implementation "androidx.work:work-runtime-ktx:$work_version"  // Kotlin + coroutines
-    implementation "androidx.work:work-rxjava2:$work_version" // optional - RxJava2 support
-    androidTestImplementation "androidx.work:work-testing:$work_version" //Optional- test support
+    def work_manager_version = "2.3.4"
+    implementation "androidx.work:work-runtime-ktx:$work_manager_version"
+
+    //Timber
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:4.10.0"
 }

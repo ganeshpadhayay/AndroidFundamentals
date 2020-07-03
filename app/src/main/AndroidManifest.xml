@@ -15,10 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".workmanager.SampleWorkManagerActivity"
-            android:label="Work Manager" />
+            android:label="Work Manager"></activity>
         <activity
             android:name=".navigationcomponents.SampleNavigationComponentActivity"
             android:label="Navigation Component" />
@@ -85,18 +84,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- android:permission="android.permission.BIND_JOB_SERVICE" this is required for Jobs -->
-
         <service
             android:name=".multithreading.service.jobscheduler.ExampleJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
         <service android:name=".multithreading.service.services.ExampleService" />
-
         <service android:name=".multithreading.service.intentservices.ExampleIntentService" />
         <service
             android:name=".multithreading.service.jobintentservice.ExampleJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
     </application>
 
 </manifest>
