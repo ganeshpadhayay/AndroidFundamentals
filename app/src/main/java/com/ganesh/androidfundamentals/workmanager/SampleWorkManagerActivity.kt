@@ -23,7 +23,7 @@ class SampleWorkManagerActivity : AppCompatActivity() {
     private val KEY_PERMISSIONS_REQUEST_COUNT = "KEY_PERMISSIONS_REQUEST_COUNT"
     private val MAX_NUMBER_REQUEST_PERMISSIONS = 2
 
-    private val permissions = Arrays.asList(
+    private val permissions = listOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
@@ -95,15 +95,9 @@ class SampleWorkManagerActivity : AppCompatActivity() {
     }
 
     private fun isPermissionGranted(permission: String) =
-        ContextCompat.checkSelfPermission(this, permission) ==
-                PackageManager.PERMISSION_GRANTED
+        ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             requestPermissionsIfNecessary() // no-op if permissions are granted already.
@@ -113,7 +107,6 @@ class SampleWorkManagerActivity : AppCompatActivity() {
     /** Image Selection  */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 REQUEST_CODE_IMAGE -> data?.let { handleImageRequestResult(data) }
@@ -125,10 +118,8 @@ class SampleWorkManagerActivity : AppCompatActivity() {
     }
 
     private fun handleImageRequestResult(intent: Intent) {
-        // If clipdata is available, we use it, otherwise we use data
-        val imageUri: Uri? = intent.clipData?.let {
-            it.getItemAt(0).uri
-        } ?: intent.data
+        // If clip data is available, we use it, otherwise we use data
+        val imageUri: Uri? = intent.clipData?.let { it.getItemAt(0).uri } ?: intent.data
 
         if (imageUri == null) {
             Timber.e("Invalid input image Uri.")

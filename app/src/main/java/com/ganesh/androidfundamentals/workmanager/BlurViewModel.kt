@@ -89,9 +89,6 @@ class BlurViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /**
-     * Setters
-     */
     internal fun setImageUri(uri: String?) {
         imageUri = uriOrNull(uri)
     }
