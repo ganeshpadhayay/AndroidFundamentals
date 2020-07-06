@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.ganesh.androidfundamentals.workmanager.workers
+package com.ganesh.androidfundamentals.workmanager.imageblur.workers
 
 import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import com.ganesh.androidfundamentals.workmanager.OUTPUT_PATH
+import com.ganesh.androidfundamentals.workmanager.imageblur.OUTPUT_PATH
 import timber.log.Timber
 import java.io.File
 
@@ -35,7 +35,9 @@ class CleanupWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params
         sleep()
 
         return try {
-            val outputDirectory = File(applicationContext.filesDir, OUTPUT_PATH)
+            val outputDirectory = File(applicationContext.filesDir,
+                OUTPUT_PATH
+            )
             if (outputDirectory.exists()) {
                 val entries = outputDirectory.listFiles()
                 if (entries != null) {

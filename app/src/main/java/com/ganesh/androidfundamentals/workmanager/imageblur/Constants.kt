@@ -1,6 +1,6 @@
 @file:JvmName("Constants")
 
-package com.ganesh.androidfundamentals.workmanager
+package com.ganesh.androidfundamentals.workmanager.imageblur
 
 // Notification Channel constants
 

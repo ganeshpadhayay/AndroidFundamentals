@@ -1,13 +1,13 @@
-package com.ganesh.androidfundamentals.workmanager
+package com.ganesh.androidfundamentals.workmanager.imageblur
 
 import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.work.*
-import com.ganesh.androidfundamentals.workmanager.workers.BlurWorker
-import com.ganesh.androidfundamentals.workmanager.workers.CleanupWorker
-import com.ganesh.androidfundamentals.workmanager.workers.SaveImageToFileWorker
+import com.ganesh.androidfundamentals.workmanager.imageblur.workers.BlurWorker
+import com.ganesh.androidfundamentals.workmanager.imageblur.workers.CleanupWorker
+import com.ganesh.androidfundamentals.workmanager.imageblur.workers.SaveImageToFileWorker
 
 class BlurViewModel(application: Application) : AndroidViewModel(application) {
 

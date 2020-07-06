@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.workmanager
+package com.ganesh.androidfundamentals.workmanager.imageblur
 
 import android.content.Intent
 import android.os.Bundle

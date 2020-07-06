@@ -1,6 +1,6 @@
 @file:JvmName("WorkerUtils")
 
-package com.ganesh.androidfundamentals.workmanager.workers
+package com.ganesh.androidfundamentals.workmanager.imageblur.workers
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -16,7 +16,7 @@ import androidx.annotation.WorkerThread
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.ganesh.androidfundamentals.R
-import com.ganesh.androidfundamentals.workmanager.*
+import com.ganesh.androidfundamentals.workmanager.imageblur.*
 import timber.log.Timber
 import java.io.File
 import java.io.FileNotFoundException
@@ -39,8 +39,10 @@ fun makeStatusNotification(message: String, context: Context) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
-        val name = VERBOSE_NOTIFICATION_CHANNEL_NAME
-        val description = VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
+        val name =
+            VERBOSE_NOTIFICATION_CHANNEL_NAME
+        val description =
+            VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
         val importance = NotificationManager.IMPORTANCE_HIGH
         val channel = NotificationChannel(CHANNEL_ID, name, importance)
         channel.description = description
@@ -53,7 +55,9 @@ fun makeStatusNotification(message: String, context: Context) {
     }
 
     // Create the notification
-    val builder = NotificationCompat.Builder(context, CHANNEL_ID)
+    val builder = NotificationCompat.Builder(context,
+        CHANNEL_ID
+    )
         .setSmallIcon(R.drawable.ic_launcher_foreground)
         .setContentTitle(NOTIFICATION_TITLE)
         .setContentText(message)
@@ -120,7 +124,9 @@ fun blurBitmap(bitmap: Bitmap, applicationContext: Context): Bitmap {
 @Throws(FileNotFoundException::class)
 fun writeBitmapToFile(applicationContext: Context, bitmap: Bitmap): Uri {
     val name = String.format("blur-filter-output-%s.png", UUID.randomUUID().toString())
-    val outputDir = File(applicationContext.filesDir, OUTPUT_PATH)
+    val outputDir = File(applicationContext.filesDir,
+        OUTPUT_PATH
+    )
     if (!outputDir.exists()) {
         outputDir.mkdirs() // should succeed
     }

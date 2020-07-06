@@ -1,4 +1,4 @@
-package com.ganesh.androidfundamentals.workmanager.workers
+package com.ganesh.androidfundamentals.workmanager.imageblur.workers
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -7,7 +7,7 @@ import android.text.TextUtils
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.ganesh.androidfundamentals.workmanager.KEY_IMAGE_URI
+import com.ganesh.androidfundamentals.workmanager.imageblur.KEY_IMAGE_URI
 import timber.log.Timber
 
 class BlurWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
