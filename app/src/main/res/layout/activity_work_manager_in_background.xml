@@ -5,13 +5,20 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".workmanager.backgroundwork.WorkManagerInBackgroundActivity">
 
     <Button
-        android:id="@+id/startWork"
+        android:id="@+id/scheduleWork"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Work" />
+        android:text="Schedule Work" />
+
+    <Button
+        android:id="@+id/cancelWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel Work" />
 
 
 </LinearLayout>
