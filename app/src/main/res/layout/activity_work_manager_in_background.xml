@@ -5,19 +5,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".workmanager.SampleWorkManagerActivity">
+    tools:context=".workmanager.backgroundwork.WorkManagerInBackgroundActivity">
 
     <Button
-        android:id="@+id/imageBlurWorkButton"
+        android:id="@+id/startWork"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Image Blur Work" />
+        android:text="Start Work" />
 
-    <Button
-        android:id="@+id/workManagerInBackground"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Work Manager In Background" />
 
 </LinearLayout>

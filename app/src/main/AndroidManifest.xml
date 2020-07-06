@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".workmanager.backgroundwork.WorkManagerInBackgroundActivity"
+            android:label="Background Work" />
+        <activity
             android:name=".workmanager.SampleWorkManagerActivity"
             android:label="Sample Work Managers" />
         <activity
