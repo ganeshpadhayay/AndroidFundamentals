@@ -38,7 +38,7 @@ class BackgroundHandler(var context: Context) : Handler() {
 
     @SuppressLint("LogNotTimber")
     private fun registerReceiver() {
-        context.applicationContext.registerReceiver(networkChangeReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        context?.applicationContext?.registerReceiver(networkChangeReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         Log.d(TAG, "registering receiver from ${Thread.currentThread().name}")
     }
 }

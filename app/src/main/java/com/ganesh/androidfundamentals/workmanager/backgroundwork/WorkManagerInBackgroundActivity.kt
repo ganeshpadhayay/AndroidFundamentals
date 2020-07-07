@@ -31,13 +31,16 @@ class WorkManagerInBackgroundActivity : AppCompatActivity() {
 //            setRequiresCharging(true)
 //        }.build()
 
-        val request: PeriodicWorkRequest =
-            PeriodicWorkRequestBuilder<MyWorker>(15, TimeUnit.MINUTES).build()
-//                .setInitialDelay(3, TimeUnit.SECONDS)
-//                .setConstraints(constraints)
-//                .build()
+//        val oneTimeRequest: OneTimeWorkRequest.Builder = OneTimeWorkRequestBuilder<MyWorker>()
+//            .setInitialDelay(3, TimeUnit.SECONDS)
+//            .setConstraints(constraints)
+//            .build()
 
-        WorkManager.getInstance(this).enqueueUniquePeriodicWork("my-unique-name", ExistingPeriodicWorkPolicy.REPLACE, request)
+        val periodicWorkRequest: PeriodicWorkRequest = PeriodicWorkRequestBuilder<MyWorker>(15, TimeUnit.MINUTES)
+                .setInitialDelay(1, TimeUnit.MINUTES)
+                .build()
+
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork("my-unique-name", ExistingPeriodicWorkPolicy.REPLACE, periodicWorkRequest)
     }
 
     private fun cancelWork() {
