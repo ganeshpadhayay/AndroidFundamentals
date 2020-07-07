@@ -2,9 +2,9 @@ package com.ganesh.androidfundamentals.workmanager.backgroundwork
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.work.ExistingWorkPolicy
-import androidx.work.OneTimeWorkRequest
-import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequest
+import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.ganesh.androidfundamentals.R
 import kotlinx.android.synthetic.main.activity_work_manager_in_background.*
@@ -31,13 +31,13 @@ class WorkManagerInBackgroundActivity : AppCompatActivity() {
 //            setRequiresCharging(true)
 //        }.build()
 
-        val request: OneTimeWorkRequest =
-            OneTimeWorkRequestBuilder<MyWorker>()
-                .setInitialDelay(3, TimeUnit.SECONDS)
+        val request: PeriodicWorkRequest =
+            PeriodicWorkRequestBuilder<MyWorker>(15, TimeUnit.MINUTES).build()
+//                .setInitialDelay(3, TimeUnit.SECONDS)
 //                .setConstraints(constraints)
-                .build()
+//                .build()
 
-        WorkManager.getInstance(this).enqueueUniqueWork("my-unique-name", ExistingWorkPolicy.KEEP, request)
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork("my-unique-name", ExistingPeriodicWorkPolicy.REPLACE, request)
     }
 
     private fun cancelWork() {

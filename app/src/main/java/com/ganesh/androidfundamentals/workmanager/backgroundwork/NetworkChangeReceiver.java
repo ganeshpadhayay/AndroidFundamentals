@@ -20,7 +20,9 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
         final android.net.NetworkInfo mobile = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
         if (wifi.isAvailable() || mobile.isAvailable()) {
-            Log.d("Ganesh", "Flag No 1");
+            Log.d("Ganesh", "Network Available");
+        } else {
+            Log.d("Ganesh", "Network Unavailable");
         }
     }
 }

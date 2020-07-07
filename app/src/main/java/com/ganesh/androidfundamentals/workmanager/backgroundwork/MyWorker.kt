@@ -2,54 +2,45 @@ package com.ganesh.androidfundamentals.workmanager.backgroundwork
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.IntentFilter
-import android.net.ConnectivityManager
 import android.os.Handler
 import android.os.Looper
+import android.os.Message
 import android.util.Log
-import android.widget.Toast
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 
 class MyWorker(var context: Context, params: WorkerParameters) : Worker(context, params) {
 
-    private lateinit var networkChangeReceiver: NetworkChangeReceiver
+    companion object {
+        private const val TAG = "Ganesh"
+        const val REGISTER = 1
+        const val UNREGISTER = -1
+    }
 
+    //looper and handlers for the background thread running in doWork() method
+    lateinit var handler: Handler
+    lateinit var looper: Looper
+
+    @SuppressLint("LogNotTimber")
     override fun doWork(): Result {
-        Log.d("Ganesh", "doWork MyWorker")
+        Log.d(TAG, "doWork: in my Worker from ${Thread.currentThread().name}")
 
-//        registerReceiver()
+        Looper.prepare()
+        handler = BackgroundHandler(context)
 
-        val handler = Handler(Looper.getMainLooper())
-        handler.postDelayed({
-            Log.d("Ganesh", "Testing delayed 5 second runnable")
-            Toast.makeText(context.applicationContext, "Testing delayed 5 second runnable", Toast.LENGTH_SHORT).show()
-        }, 2000)
+        //send message to register
+        val registerMessage: Message = Message.obtain()
+        registerMessage.what = REGISTER
+        handler.sendMessageDelayed(registerMessage, 0)
 
-//        val receiverHandler = Handler(Looper.getMainLooper())
-//        receiverHandler.postDelayed({
-//            Log.d("Ganesh", "trying to unregister from main thread")
-//            Toast.makeText(context, "trying to unregister from main thread", Toast.LENGTH_SHORT).show()
-//            unregisterReceiver()
-//        }, 5000)
+        //send message to unregister
+        val unregisterMessage: Message = Message.obtain()
+        unregisterMessage.what = UNREGISTER
+        handler.sendMessageDelayed(unregisterMessage, 10000)
 
+        Looper.loop()
+        Log.d(TAG, "doWork: returning result from ${Thread.currentThread().name}")
         return Result.success()
-    }
-
-    private fun unregisterReceiver() {
-        networkChangeReceiver?.let {
-            context.applicationContext.unregisterReceiver(it)
-        }
-        Log.d("Ganesh", "unregistering receiver")
-    }
-
-    private fun registerReceiver() {
-        networkChangeReceiver = NetworkChangeReceiver()
-        context.applicationContext.registerReceiver(
-            networkChangeReceiver,
-            IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
-        )
-        Log.d("Ganesh", "registering receiver")
     }
 
     @SuppressLint("LogNotTimber")
