@@ -33,12 +33,11 @@ class WorkManagerInBackgroundActivity : AppCompatActivity() {
 
         val request: OneTimeWorkRequest =
             OneTimeWorkRequestBuilder<MyWorker>()
-                .setInitialDelay(5, TimeUnit.SECONDS)
+                .setInitialDelay(3, TimeUnit.SECONDS)
 //                .setConstraints(constraints)
                 .build()
 
-        WorkManager.getInstance(this)
-            .enqueueUniqueWork("my-unique-name", ExistingWorkPolicy.KEEP, request)
+        WorkManager.getInstance(this).enqueueUniqueWork("my-unique-name", ExistingWorkPolicy.KEEP, request)
     }
 
     private fun cancelWork() {
