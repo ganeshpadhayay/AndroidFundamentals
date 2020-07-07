@@ -17,9 +17,8 @@ class MyWorker(var context: Context, params: WorkerParameters) : Worker(context,
         const val UNREGISTER = -1
     }
 
-    //looper and handlers for the background thread running in doWork() method
+    //handler for the background thread running in doWork() method
     lateinit var handler: Handler
-    lateinit var looper: Looper
 
     @SuppressLint("LogNotTimber")
     override fun doWork(): Result {
@@ -28,12 +27,12 @@ class MyWorker(var context: Context, params: WorkerParameters) : Worker(context,
         Looper.prepare()
         handler = BackgroundHandler(context)
 
-        //send message to register
+        //send message to register to receivers
         val registerMessage: Message = Message.obtain()
         registerMessage.what = REGISTER
         handler.sendMessageDelayed(registerMessage, 0)
 
-        //send message to unregister
+        //send message to unregister the receivers
         val unregisterMessage: Message = Message.obtain()
         unregisterMessage.what = UNREGISTER
         handler.sendMessageDelayed(unregisterMessage, 10000)
