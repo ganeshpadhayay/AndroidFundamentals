@@ -1,0 +1,12 @@
+package com.ganesh.androidfundamentals.workmanager.backgroundwork
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.util.Log
+
+class AirplaneModeReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        Log.d("Ganesh", "onReceive AirplaneModeReceiver")
+    }
+}
