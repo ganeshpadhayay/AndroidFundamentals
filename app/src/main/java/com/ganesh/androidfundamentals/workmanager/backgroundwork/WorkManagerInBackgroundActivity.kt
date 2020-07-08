@@ -36,9 +36,7 @@ class WorkManagerInBackgroundActivity : AppCompatActivity() {
 //            .setConstraints(constraints)
 //            .build()
 
-        val periodicWorkRequest: PeriodicWorkRequest = PeriodicWorkRequestBuilder<MyWorker>(15, TimeUnit.MINUTES)
-                .setInitialDelay(1, TimeUnit.MINUTES)
-                .build()
+        val periodicWorkRequest: PeriodicWorkRequest = PeriodicWorkRequestBuilder<MyWorker>(15, TimeUnit.MINUTES).build()
 
         WorkManager.getInstance(this).enqueueUniquePeriodicWork("my-unique-name", ExistingPeriodicWorkPolicy.REPLACE, periodicWorkRequest)
     }
