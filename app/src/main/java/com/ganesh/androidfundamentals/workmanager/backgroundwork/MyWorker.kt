@@ -18,13 +18,13 @@ class MyWorker(var context: Context, params: WorkerParameters) : Worker(context,
     }
 
     //handler for the background thread running in doWork() method
-    lateinit var handler: Handler
-    lateinit var looper: Looper
+    private lateinit var handler: Handler
+    private lateinit var looper: Looper
 
     @SuppressLint("LogNotTimber")
     override fun doWork(): Result {
         Log.d(TAG, "doWork: in my Worker from ${Thread.currentThread().name} and priority is ${Thread.currentThread().priority}")
-//        Thread.currentThread().priority = THREAD_PRIORITY_MORE_FAVORABLE
+//        Thread.currentThread().priority = THREAD_PRIORITY_MORE_FAVORABLE  //this is not working
 
         //setup looper and handler
         Looper.prepare()
