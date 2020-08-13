@@ -1,6 +1,6 @@
 package com.ganesh.hackerrank;
 
-public class Hackerrank {
+public class DayOfTheProgrammer {
     public static void main(String[] args) {
         System.out.println(dayOfProgrammer(1918));
     }
