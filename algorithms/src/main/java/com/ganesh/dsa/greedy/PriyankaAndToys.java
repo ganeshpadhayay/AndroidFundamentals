@@ -2,9 +2,9 @@ package com.ganesh.dsa.greedy;
 
 import java.util.Arrays;
 
+
 public class PriyankaAndToys {
 
-    // Complete the toys function below.
     static int toys(int[] w) {
         Arrays.sort(w);
         int answer = 1;
@@ -16,5 +16,20 @@ public class PriyankaAndToys {
             }
         }
         return answer;
+    }
+
+    static int maximumToys(int[] prices, int k) {
+        Arrays.sort(prices);
+        int count = 0;
+        int temp = 0;
+        for (int i = 0; i < prices.length; i++) {
+            temp += prices[i];
+            if (temp < k) {
+                count++;
+            } else {
+                return count;
+            }
+        }
+        return count;
     }
 }
