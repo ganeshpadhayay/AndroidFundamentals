@@ -10,6 +10,8 @@ object LongestCommonSubsequence {
     fun main(args: Array<String>) {
         val s1 = "AXYZ"
         val s2 = "BAZ"
+
+        //memoization
         val n = 4
         val m = 3
         memo = Array(n + 1) { IntArray(m + 1) }
@@ -29,7 +31,8 @@ object LongestCommonSubsequence {
         else {
             if (s1[n - 1] == s2[m - 1])
                 memo[n][m] = 1 + lcsMemoization(s1, s2, n - 1, m - 1)
-            else memo[n][m] = max(lcsMemoization(s1, s2, n - 1, m), lcsMemoization(s1, s2, n, m - 1))
+            else memo[n][m] =
+                max(lcsMemoization(s1, s2, n - 1, m), lcsMemoization(s1, s2, n, m - 1))
         }
         return memo[n][m]
     }
