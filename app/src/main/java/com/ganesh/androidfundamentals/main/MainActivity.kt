@@ -2,6 +2,7 @@ package com.ganesh.androidfundamentals.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ganesh.androidfundamentals.R
 import com.ganesh.androidfundamentals.broadcastreceivers.BroadcastReceiverActivity
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonActivityFragments.setOnClickListener {
-
+            initLocationPermissions()
         }
 
         buttonBroadcastReceivers.setOnClickListener {
@@ -49,5 +50,35 @@ class MainActivity : AppCompatActivity() {
         buttonWorkManagerActivity?.setOnClickListener {
             startActivity(Intent(this, SampleWorkManagerActivity::class.java))
         }
+    }
+
+    private var customLocationPermissionHandler = CustomLocationPermissionHandler()
+
+    private fun initLocationPermissions() {
+        customLocationPermissionHandler.handleLocationPermissionPopup(this,
+                "Please allow us to access this device's location.",
+                "This app collects location data to track your promotional activities when the app is closed or not in use.",
+                "Ok",
+                object : CustomLocationPermissionHandler.OnLocationPermissionChangedListener {
+                    override fun onLocationPermissionGranted() {
+                        //granted permission
+                        Toast.makeText(this@MainActivity, "Granted", Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onLocationPermissionDenied() {
+                        //denied permission
+                        Toast.makeText(this@MainActivity, "Please give permission to access this feature", Toast.LENGTH_SHORT).show()
+                        initLocationPermissions()
+                    }
+
+                    override fun onLocationPermissionPermanentlyDenied() {
+                        //permanently denied permission
+                        Toast.makeText(this@MainActivity, "You have permanently denied the permission, please go to settings and provide location permission", Toast.LENGTH_SHORT).show()
+                    }
+                })
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        customLocationPermissionHandler.handlePermissionResults(requestCode, grantResults, this)
     }
 }
