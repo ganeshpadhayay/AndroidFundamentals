@@ -30,14 +30,14 @@ class ExampleIntentService : IntentService("ExampleIntentService") {
         Log.d(TAG, "onCreate")
 
         //acquire wake lock
-        var powerManager: PowerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
+        val powerManager: PowerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ExampleApp:WakeLock")
-        wakeLock.acquire(60* 1000)
+        wakeLock.acquire(60 * 1000)
         Log.d(TAG, "wakelock acquired")
 
         //create notification one time here
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            var notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Example IntentService")
                 .setContentText("Running...")
                 .setSmallIcon(R.drawable.ic_android)

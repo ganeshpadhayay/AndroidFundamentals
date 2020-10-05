@@ -1,4 +1,4 @@
-package com.ganesh.leetcode.problems;
+package com.ganesh.leetcode;
 
 public class ContainerWithMostWater {
 
